@@ -1,0 +1,167 @@
+:root {
+    --primary-color: #808000; /* Olive */
+    --secondary-color: #f4a460; /* Sandy Brown */
+    --accent-color: #db7093; /* PaleVioletRed: A vibrant, yet professional color for the submit button */
+    --background-color: #faf0e6; /* Linen */
+    --text-color: #696969; /* Dim Gray */
+    --font-primary: "Open Sans", Arial, sans-serif;
+    --font-secondary: "Roboto Slab", serif;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --border-radius-base: 8px;
+    --border-radius-button: 20px; /* Rounded edges for buttons */
+    --box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    --transition-fast: 0.2s;
+    --padding-standard: 10px 20px;
+}
+
+button[type="submit"] {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--border-radius-button); /* Creates a pill shape for the button */
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color var(--transition-fast);
+}
+
+    button[type="submit"]:hover {
+        background-color: darken(var(--accent-color), 10%);
+    }
+
+    button[type="submit"]:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5), 0 0 0 4px rgba(219, 112, 147, 0.5); /* Adjusted to match the new accent color */
+    }
+
+
+body {
+    margin: 0;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-secondary);
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: var(--font-size-xl);
+}
+
+h2 {
+    font-size: var(--font-size-lg);
+}
+
+h3 {
+    font-size: var(--font-size-base);
+}
+
+a, button, input[type="submit"] {
+    font-family: var(--font-primary);
+}
+
+/* Continue with the rest of the CSS, applying the font-family and font-size variables as needed */
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-base);
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--box-shadow);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none; /* Removes underline */
+    transition: color var(--transition-fast);
+}
+
+    a:hover,
+    a:focus {
+        color: darken(var(--accent-color), 15%);
+        text-decoration: underline; /* Adds underline on hover/focus for clarity */
+    }
+
+button,
+input[type="submit"] {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: var(--padding-standard);
+    border: none;
+    border-radius: var(--border-radius-button);
+    cursor: pointer;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+    text-align: center;
+}
+
+    button:hover,
+    input[type="submit"]:hover {
+        background-color: darken(var(--accent-color), 10%);
+        transform: translateY(-2px); /* Subtle lift effect */
+    }
+
+    button:focus,
+    input[type="submit"]:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(255, 127, 80, 0.5); /* Focus shadow matching accent color */
+    }
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius-base);
+    transition: border-color var(--transition-fast);
+}
+
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    input[type="date"]:focus,
+    select:focus {
+        border-color: var(--accent-color);
+        outline: none; /* Removes default focus outline */
+        box-shadow: 0 0 0 2px rgba(var(--accent-color), 0.4); /* Custom focus indicator */
+    }
+
+/* Additional styles for structure and layout could be added here */
+
