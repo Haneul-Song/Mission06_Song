@@ -5,9 +5,18 @@
 <div class="form-container">
     <h1 class="h1-general">Add a Movie</h1>
     <form method="post" class="form-general">
+        
+        <input type="hidden" asp-for="MovieId" />
+
         <div class="form-group">
             <label asp-for="Category" class="form-label">Category:</label>
-            <input asp-for="Category" required class="form-control" />
+            <select asp-for="CategoryId" required class="form-control">
+                <option value="">Select a Catetory</option>
+                @foreach (Category m in ViewBag.Categories)
+                {
+                    <option value="@m.CategoryId">@m.CategoryName</option>
+                }
+            </select>
         </div>
 
         <div class="form-group">
@@ -45,8 +54,16 @@
         </div>
 
         <div class="form-group">
-            <label asp-for="Lent_To" class="form-label">Lent To:</label>
-            <input asp-for="Lent_To" class="form-control" />
+            <label asp-for="LentTo" class="form-label">Lent To:</label>
+            <input asp-for="LentTo" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CopiedToPlex" class="form-label">CopiedToPlex:</label>
+            <select asp-for="CopiedToPlex" class="form-control">
+                <option value="False">No</option>
+                <option value="True">Yes</option>
+            </select>
         </div>
 
         <div class="form-group">
@@ -55,5 +72,8 @@
         </div>
 
         <button type="submit" class="btn-primary">Submit to Add a Movie</button>
+
+        <div asp-validation-summary="All"></div>
+
     </form>
 </div>

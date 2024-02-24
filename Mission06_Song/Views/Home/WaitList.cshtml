@@ -1,0 +1,88 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<AddMovie>
+<style>
+    .table-head {
+        background-color: #4a90e2; /* Updated to a pleasant blue shade */
+        color: midnightblue; /* White text for better contrast and readability */
+        font-weight: bold;
+        text-align: center; /* Center aligning the header text */
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added subtle shadow for depth */
+        margin-top: 20px; /* Added some space above the table */
+    }
+
+        .table td, .table th {
+            border: 1px solid #e1e1e1; /* Lighter border color */
+            padding: 10px 15px; /* More padding for a spacious look */
+            text-align: left; /* Ensuring text aligns to the left */
+        }
+
+        .table tr:nth-child(odd) { /* Style for odd rows for a change */
+            background-color: #f7f7f7; /* Slightly darker shade for contrast */
+        }
+
+        .table tr:hover {
+            background-color: #ddefff; /* A light blue for hover, matching the header */
+            cursor: pointer; /* Change cursor to signify interactivity */
+        }
+
+        .table th {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            background-color: #357abd; /* A darker blue for the header background */
+            color: white; /* Ensure header text is white for readability */
+            text-transform: uppercase; /* Capitalize header text */
+            letter-spacing: 1px; /* Add spacing between letters for aesthetics */
+        }
+</style>
+<table class="table">
+
+    <thead class="table-head">
+        <tr>
+            <td>Category</td>
+            <td>Title</td>
+            <td>Year</td>
+            <td>Director</td>
+            <td>Rating</td>
+            <td>Edited</td>
+            <td>Lent To</td>
+            <td>Notes</td>
+            <td>CopiedToPlex</td>
+            <td>Edit</td>
+            <td>Delete</td>
+        </tr>
+
+    </thead>
+
+    @foreach (var x in Model)
+    {
+        <tbody>
+            <tr>
+                <td>@x.Category.CategoryName</td>
+                <td>@x.Title</td>
+                <td>@x.Year</td>
+                <td>@x.Director</td>
+                <td>@x.Rating</td>
+                <td>@x.Edited</td>
+                <td>@x.LentTo</td>
+                <td>@x.Notes</td>
+                <td>@x.CopiedToPlex</td>
+
+                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.MovieId">Edit</a></td>
+                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.MovieId">Delete</a></td>
+            </tr>
+
+        </tbody>  
+    }
+
+
+</table>
